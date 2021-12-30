@@ -1,5 +1,4 @@
-import argparse
-from compileall import compile_dir
+import compileall
 from gooey import Gooey, GooeyParser
 
 
@@ -24,12 +23,6 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-def resultat(message):
-    import wx
-    app = wx.App()
-    dlg = wx.MessageDialog(None, message, 'dsfasdfa', wx.ICON_INFORMATION)
-    dlg.ShowModal()
-
 def show_error_message(message):
     import wx
     app = wx.App()
@@ -40,24 +33,32 @@ def compilar(fitxer):
     import os
     import compileall
     import shutil
-
-    path = os.path.dirname(fitxer)
-    fitxer = os.path.basename(fitxer)
-    
-    os.system('cd '+ path)
-    compileall.compile_file(path+'\\'+fitxer, force=True)
-    f_name, f_ext = os.path.splitext(fitxer)
-    shutil.copyfile(path+"\\__pycache__\\"+f_name +".cpython-39.pyc", path+"\\"+f_name+".cpython-39.pyc")
-    shutil.rmtree(path+"\\__pycache__")
+    try:
+        path = os.path.dirname(fitxer)
+        fitxer = os.path.basename(fitxer)
+        
+        os.system('cd '+ path)
+        compileall.compile_file(path+'\\'+fitxer, force=True)
+        f_name, f_ext = os.path.splitext(fitxer)
+        shutil.copyfile(path+"\\__pycache__\\"+f_name +".cpython-39.pyc", path+"\\"+f_name+".cpython-39.pyc")
+        shutil.rmtree(path+"\\__pycache__")
+    except Exception as e:
+        show_error_message(e)
+        print("No s'ha pogut compilar el fitxer. Assegurat que es python")
 
 def executar(fitxer):
-    exec(fitxer)
+    try:
+        exec(fitxer)
+    except Exception as e:
+        show_error_message(e)
+        print("El fitxer no s'ha pogut executar")
 
 def llegir(fitxer):
     try:
         with open(fitxer, 'r') as f:
             print(f.read())
     except Exception as e:
+        show_error_message(e)
         print("Document illegible. Comprova que sigui text pla")
 
 if __name__ == '__main__':
