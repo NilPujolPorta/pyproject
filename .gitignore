@@ -3,3 +3,4 @@ dist
 pyproject.egg-info
 publish.bat
 tests
+pyproject/compilar.bat
