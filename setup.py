@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='pyproject',
+setup(name='pyproject-npp',
       version='0.2',
       description='Programa per tractament de fitxers.',
       long_description="""
-# pyproject
+# pyproject-npp
 ## Informació
 - Per executar el programa s'ha de tenir instalat el python versio 3 o mes.
 - Requeriments a requirements.txt.
@@ -13,7 +13,7 @@ setup(name='pyproject',
 ## Instal·lació
 - Utilitzant `pip`
 ```
-pip install pyproject
+pip install pyproject-npp
 ```
 ## Ús
 - Executar el fitxer `pyproject.py` o `pyproject.cpython-39.pyc` amb les opcions adients
@@ -36,7 +36,7 @@ pip install pyproject
           "Gooey",
           "pytest-shutil"
       ],
-	  entry_points = {
-        "console_scripts": ['pyproject = pyproject.pyproject:main']
+	entry_points = {
+        "console_scripts": ['pyproject-npp = pyproject.pyproject:main']
         },
       zip_safe=False)

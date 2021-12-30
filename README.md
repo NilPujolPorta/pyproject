@@ -7,7 +7,7 @@
 ## Instal·lació
 - Utilitzant `pip`
 ```
-pip install pyproject
+pip install pyproject-npp
 ```
 ## Ús
 - Executar el fitxer `pyproject.py` o `pyproject.cpython-39.pyc`
