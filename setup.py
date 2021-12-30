@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(name='pyproject',
-      version='0.1',
-      description='IDK',
+      version='0.2',
+      description='Programa per tractament de fitxers.',
       long_description="""
 # pyproject
 ## Informació
@@ -32,7 +32,9 @@ pip install pyproject
       install_requires=[
           'argparse',
           "setuptools>=42",
-          "wheel"
+          "wheel",
+          "Gooey",
+          "pytest-shutil"
       ],
 	  entry_points = {
         "console_scripts": ['pyproject = pyproject.pyproject:main']

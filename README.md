@@ -10,9 +10,4 @@
 pip install pyproject
 ```
 ## Ús
-- Executar el fitxer `pyproject.py` o `pyproject.cpython-39.pyc` amb les opcions adients
-
-- Opcions
-```
-
-```
+- Executar el fitxer `pyproject.py` o `pyproject.cpython-39.pyc`
